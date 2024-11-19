@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../assets/assets";
+import JobApplicationModal from "../components/JobApplicationModal";
 
 const Contact = () => {
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div>
             <div className="text-center text-2xl pt-10 text-[#707070]">
@@ -35,11 +46,19 @@ const Contact = () => {
                     <p className=" text-gray-500">
                         Aprende más sobre nuestros equipos y ofertas de trabajo.
                     </p>
-                    <button className="border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500">
-                        Explorar Trabajos
+                    <button 
+                        onClick={openModal}
+                        className="border border-black px-8 py-4 text-sm hover:bg-black hover:text-white transition-all duration-500"
+                    >
+                        Sumate a nosotros.
                     </button>
                 </div>
             </div>
+
+            <JobApplicationModal 
+                isOpen={isModalOpen} 
+                onClose={closeModal} 
+            />
         </div>
     );
 };
