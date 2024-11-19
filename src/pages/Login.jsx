@@ -133,7 +133,7 @@ const Login = () => {
                     <span
                         onClick={() =>
                             (window.location.href =
-                                "https://prescripto-admin-tallerweb.vercel.app/")
+                                "https://prescripto-admin-web.vercel.app/")
                         }
                         className="text-primary underline cursor-pointer hover:text-primary/80 transition-colors duration-200"
                     >
